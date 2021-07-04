@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+
 type installer struct {
 	title string
 	conditions []condition
@@ -13,11 +14,15 @@ type installer struct {
 	printer    *message.Printer
 }
 
+//condition that the user need to agree before going further in the installation process
 type condition struct {
 	title string
 	body  string
 }
 
+//step to complete once conditions have been accepted.
+//step description will be displayed to the user.
+//process is the actual execution of this segment of the installation.
 type step struct {
 	description string
 	process     func() error
