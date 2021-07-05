@@ -165,7 +165,7 @@ func (g *guiStepState) getWidget(theme *material.Theme, indicator statusIndicato
 }
 
 func (g *guiStepState) getDescriptionWidget(theme *material.Theme) func(gtx C) D {
-	return getFlexLayoutFunc(layout.Rigid(material.Body1(theme, g.step.description).Layout))
+	return getFlexLayoutFunc(layout.Rigid(material.Body2(theme, g.step.description).Layout))
 }
 
 func getFlexLayoutFunc(content ...layout.FlexChild) func(gtx C) D {
