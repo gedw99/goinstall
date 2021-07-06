@@ -2,6 +2,11 @@ package goinstall
 
 import (
 	"gioui.org/app"
+	"image/color"
+	"log"
+	"os"
+	"time"
+
 	"gioui.org/font/gofont"
 	"gioui.org/io/pointer"
 	"gioui.org/io/system"
@@ -11,10 +16,6 @@ import (
 	"gioui.org/widget"
 	"gioui.org/widget/material"
 	"golang.org/x/exp/shiny/materialdesign/icons"
-	"image/color"
-	"log"
-	"os"
-	"time"
 )
 
 type status uint8
@@ -46,7 +47,6 @@ func (s *guiState) display(gtx layout.Context) layout.Dimensions {
 	}
 	return displayWidgetList(gtx, s.list, widgets)
 }
-
 
 type guiState struct {
 	title  material.LabelStyle
