@@ -9,18 +9,18 @@ import (
 )
 
 
-//AddRegisterProtocolOnWindowsStep registers a new protocol that will trigger a given bash command string
-func (i *installer) AddRegisterProtocolOnWindowsStep(protocol string, execCmd string) {
+//AddRegisterProtocolStep registers a new protocol that will trigger a given bash command string
+func (i *installer) AddRegisterProtocolStep(protocol string, execCmd string) {
 	setRegistryKeyValues := newSetRegistryKeyValuesFunc()
 	registerRegistryKeyWithValues := newRegisterRegistryKeyWithValuesFunc(registry.CreateKey, setRegistryKeyValues)
-	registerProtocolOnWindows := newRegisterProtocolOnWindowsFunc(protocol, execCmd, registerRegistryKeyWithValues)
+	registerProtocolOnWindows := newRegisterProtocolFunc(protocol, execCmd, registerRegistryKeyWithValues)
 	i.AddStep(registerProtocolOnWindows, i.printer.Sprintf(registerProtocolMsg, protocol))
 }
 
 type createRegistryKey = func(k registry.Key, path string, access uint32) (newK registry.Key, opened bool, err error)
 type registerProtocolOnWindows = func() error
 
-func newRegisterProtocolOnWindowsFunc(protocol, execCmd string, registerKeyWithValues registerRegistryKeyWithValues) registerProtocolOnWindows {
+func newRegisterProtocolFunc(protocol, execCmd string, registerKeyWithValues registerRegistryKeyWithValues) registerProtocolOnWindows {
 	const (
 		software       = "SOFTWARE"
 		classes        = "Classes"

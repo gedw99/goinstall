@@ -9,9 +9,9 @@ import (
 	"path/filepath"
 )
 
-//AddRegisterProtocolOnLinuxStep using xdg-mime app.
+//AddRegisterProtocolStep using xdg-mime app.
 //A .desktop file has to be provided to handle registered protocol
-func (i *installer) AddRegisterProtocolOnLinuxStep(protocol string, dotDesktopFileBytes []byte) {
+func (i *installer) AddRegisterProtocolStep(protocol string, dotDesktopFileBytes []byte) {
 	dotDesktopFile := newDotDesktopFile(dotDesktopFileBytes, protocol)
 	copy := newCopyFileFunc(ioutil.WriteFile)
 

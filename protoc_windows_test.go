@@ -73,7 +73,7 @@ func TestSetRegistryKeyValues(t *testing.T) {
 	}
 }
 
-func TestRegisterProtocolOnWindows_Integration(t *testing.T) {
+func TestRegisterProtocol_Integration(t *testing.T) {
 	//test done 04/07/2021 windows 10
 	t.Skip()
 	setRegistryKeyValues := newSetRegistryKeyValuesFunc()
