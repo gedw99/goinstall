@@ -10,4 +10,4 @@ require (
 	golang.org/x/text v0.3.0
 )
 
-replace gioui.org v0.0.0-20210705140830-941aeaae910e => github.com/audrenbdb/gio d5f8c860af591025fc1e27174a2e31400492cf1b
+replace gioui.org v0.0.0-20210705140830-941aeaae910e => github.com/audrenbdb/gio v0.0.0-20210706065127-d5f8c860af59

@@ -267,7 +267,7 @@ func getMaterialH5Title(title string, theme *material.Theme) material.LabelStyle
 
 func newWindow(title string) *app.Window {
 	windowTitle := app.Title(title)
-	size := app.Size(unit.Dp(300), unit.Dp(500))
+	size := app.Size(unit.Dp(350), unit.Dp(500))
 	return app.NewWindow(size, windowTitle, app.Centered(true))
 }
 
